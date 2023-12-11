@@ -1,0 +1,169 @@
+@import url("normalize.css");
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Rubik', 'sans-serif';
+    font-style: "regular";
+    line-height: 1.2;
+
+    padding: 0;
+    margin-top: 80px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.content {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 84px;
+    background-color: #007765;
+}
+
+.vertikalHeader {
+    margin: 0 auto;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.header_logo {
+    padding-top: 4px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-indent: 8px;
+    color: white;
+}
+
+.header_list {
+    font-weight: 500;
+}
+
+.header_list li {
+    text-indent: 8px;
+    display: inline-block;
+    color: white;
+}
+
+.header_list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex {
+    flex-grow: 1;
+}
+
+.titleTop {
+    color: #007765;
+    text-align: center;
+    font-size: 30px;
+}
+
+.titleTwo {
+    color: #007765;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.mainform {
+    background-color: #007765;
+    margin-top: 10px;
+    padding: 38px 28px 28px 28px;
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 1px 7px 5px rgba(15, 83, 101, 0.57);
+    font-size: 20px;
+}
+
+label {
+    color: white;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4f4e4e;
+    height: 176px;
+    color: white;
+}
+
+.privacy_policy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+    .header_site_name {
+        display: none;
+    }
+
+    .header_nav {
+        overflow: hidden;
+    }
+
+    .header_list {
+        display: block;
+        max-height: 0;
+        transition: max-height 0.3s;
+    }
+
+    input{
+        height: 40px;
+        font-size: 30px ;
+    }
+    button{
+        height: 40px;
+        border-radius: 8px;
+        background-color: white;
+    }
+}
