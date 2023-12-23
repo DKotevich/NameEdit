@@ -24,6 +24,7 @@ p {
     font-weight: 200;
 }
 
+/*Shirina headera*/
 .content {
     max-width: 1024px;
     margin: 0 auto;
@@ -33,6 +34,7 @@ p {
 
 }
 
+/*poloska headera*/
 .header {
     position: fixed;
     top: 0;
@@ -43,13 +45,14 @@ p {
     background-color: #007765;
 }
 
+/*Sirina Kontenta headera*/
 .vertikalHeader {
     margin: 0 auto;
     max-width: 1024px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 0px;
     padding-right: 20px;
 }
 
@@ -63,12 +66,13 @@ p {
     color: white;
 }
 
+/*NAVIGACIYA SAITA v headere*/
 .header_list {
     font-weight: 500;
 }
 
 .header_list li {
-    text-indent: 8px;
+    text-indent: 15px;
     display: inline-block;
     color: white;
 }
@@ -77,6 +81,48 @@ p {
     color: white;
     text-decoration: none;
 }
+
+/*Knopka MENU*/
+.header_nav_toggle {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #008874;
+    color: white;
+    box-shadow: 0 2px #005548;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+}
+
+.header_nav_toggle:hover {
+    background-color: #279484;
+}
+
+.header_nav_toggle:active {
+    background-color: #00705f !important;
+}
+
+.header_nav_toggle:focus-visible {
+    box-shadow: 0 0 0 3px #00a189;
+}
+
+.header_nav_toggle:disabled {
+    background-color: #3f887d;
+    pointer-events: none;
+}
+
 
 .page {
     display: flex;
@@ -94,16 +140,10 @@ p {
     font-size: 30px;
 }
 
-.titleTwo {
-    color: #007765;
-    text-align: center;
-    font-size: 30px;
-    margin-top: 10px;
-}
 
 .mainform {
     background-color: #007765;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 38px 28px 28px 28px;
     border-radius: 10px;
     width: 100%;
@@ -123,6 +163,47 @@ input {
     border-radius: 8px;
 }
 
+button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: 550;
+    text-decoration: none;
+    background-color: #008874;
+    color: white;
+    box-shadow: 0 2px #005548;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+}
+
+button:hover {
+    background-color: #279484;
+}
+
+button:active {
+    background-color: #00705f !important;
+}
+
+button:focus-visible {
+    box-shadow: 0 0 0 3px #00a189;
+}
+
+button:disabled {
+    background-color: #3f887d;
+    pointer-events: none;
+}
+
+
 footer {
     flex-shrink: 0;
     margin-top: 20px;
@@ -130,40 +211,133 @@ footer {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #4f4e4e;
     height: 176px;
     color: white;
 }
 
-.privacy_policy {
+footer div {
+    margin: 30px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
 }
 
-@media screen and (max-width: 850px) {
-    .header_site_name {
-        display: none;
+/* При размере больше 768 */
+@media screen and (min-width: 1024px) {
+    .header_nav_toggle {
+        visibility: hidden;
+    }
+}
+
+/* При размере меньше 768 */
+@media screen and (max-width: 1024px) {
+
+    .content {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-top: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+    }
+
+    .vertikalHeader {
+        margin: 0 auto;
+        max-width: 1024px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 30px;
     }
 
     .header_nav {
-        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #007765;
+        width: 100%;
+        text-align: center;
+    }
+
+    .header_nav.active {
+        display: flex;
     }
 
     .header_list {
-        display: block;
-        max-height: 0;
-        transition: max-height 0.3s;
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;
     }
 
-    input{
-        height: 40px;
-        font-size: 30px ;
+    .header_list li {
+        display: block;
+        margin-bottom: 10px;
     }
-    button{
+
+    .header_list li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .header_nav_toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /*Polya VVODA*/
+    input {
         height: 40px;
-        border-radius: 8px;
-        background-color: white;
+        font-size: 30px;
+    }
+
+    button {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0 20px;
+        margin: 0 15px 15px 0;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        line-height: 32px;
+        font-size: 19px;
+        font-weight: 550;
+        text-decoration: none;
+        background-color: #008874;
+        color: white;
+        box-shadow: 0 2px #005548;
+        cursor: pointer;
+        user-select: none;
+        appearance: none;
+        touch-action: manipulation;
+        vertical-align: top;
+    }
+
+    button:hover {
+        background-color: #279484;
+    }
+
+    button:active {
+        background-color: #00705f !important;
+    }
+
+    button:focus-visible {
+        box-shadow: 0 0 0 3px #00a189;
+    }
+
+    button:disabled {
+        background-color: #3f887d;
+        pointer-events: none;
     }
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<lang="en">
+<lang="ua">
 
     <head>
+        <meta name="google-site-verification" content="gCtVzK68YH6t2rNElAjzmKMnb1juZdOUqOAf0E3CL2w" />
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>NameEditor</title>
         <link rel="stylesheet" href="css/resset.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -12,6 +14,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
     </head>
 
     <body>
@@ -23,31 +29,31 @@
                         <a href="#" id="port"><img src="img/Logo.png" alt="NamEditor" height="70" width="94"></a>
                         <div class="header_site_name">Нейм едітор</div>
                     </div>
+                    <!-- Add this button inside your .vertikalHeader div -->
+                    <button class="header_nav_toggle">Меню</button>
+
                     <nav class="header_nav">
                         <ul class="header_list">
                             <li><a href="#" id="port">Як це працює</a></li>
-                            <li> | </li>
+
                             <li><a href="#2">Виправити назву документу</a></li>
-                            <li> | </li>
+
                             <li><a href="#3">Політика конфіденційності</a></li>
                         </ul>
                     </nav>
+
                 </div>
 
             </header>
 
             <div class="page">
                 <div class="flex">
-                    <div class="titleTop"> Як це працює:</div>
+                    <div class="titleTop"> Як видалити зайві символи з назви:</div>
                     <p><a id="2"></a>Часто, при створенні нового файла або переіменовуванні існуючого, операційна
                         система скаржиться на неправильне імʼя документа. Нейм едітор дозволяє швидко та безпечно
                         прибрати з
                         назви Вашого документа зайві символи.</p>
 
-                    <div class="titleTwo"> Просто вставте назву у поле нижче та отримайте назву
-                        готову до
-                        використання!
-                    </div>
                     <form class="mainform">
 
                         <label for="inputField">Введть текст:</label>
@@ -61,16 +67,19 @@
                         </p>
                     </form>
                 </div>
-                    <footer>
-                        <div class="privacy_policy">
-                            <a id="3"></a>
-                            Всі Ваші данні не зберігаються. Алгоритм лише обробляє вашу назву та видає виправлену.
-                            Одразу
-                            після
-                            обробки данні стираються.
-                        </div>
-                    </footer>
-                
+                <footer>
+                    <div class="privacy_policy">
+                        <a id="3"></a>
+                        Всі Ваші данні не зберігаються. Алгоритм лише обробляє вашу назву та видає виправлену.
+                        Одразу
+                        після
+                        обробки данні стираються.
+                    </div>
+                    <div>
+                        Питання та пропозиції: kotevichdim@gmail.com
+                    </div>
+                </footer>
+
             </div>
         </div>
     </body>
