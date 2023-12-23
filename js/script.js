@@ -22,10 +22,11 @@ function scrollToTop() {
 	});
 }
 
-// New code for the navigation menu
+// code for the navigation menu
 function setupNavMenu() {
 	const navToggle = document.querySelector('.header_nav_toggle');
 	const navMenu = document.querySelector('.header_nav');
+
 
 	navToggle.addEventListener('click', function () {
 		navMenu.classList.toggle('active');
@@ -57,27 +58,3 @@ btnPort.addEventListener('click', function (e) {
 	e.preventDefault();
 	scrollToTop();
 });
-
-
-/*VIBOR YAZIKA
-function switchLanguage(lang) {
-	if (lang === 'en') {
-		document.getElementById('en-content').style.display = 'block';
-		document.getElementById('ua-content').style.display = 'none';
-		localStorage.setItem('preferredLanguage', 'en');
-	} else if (lang === 'ua') {
-		document.getElementById('en-content').style.display = 'none';
-		document.getElementById('ua-content').style.display = 'block';
-		localStorage.setItem('preferredLanguage', 'ua');
-	}
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-	// Проверяем, есть ли сохраненные предпочтения языка
-	const preferredLanguage = localStorage.getItem('preferredLanguage');
-
-	if (preferredLanguage) {
-		switchLanguage(preferredLanguage);
-	}
-});
-*/
