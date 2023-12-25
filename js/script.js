@@ -1,4 +1,4 @@
-// Old code for copying text
+// Сode for copying text
 function copyText(event) {
 	// Prevent the default form submission behavior
 	event.preventDefault();
@@ -22,7 +22,7 @@ function scrollToTop() {
 	});
 }
 
-// code for the navigation menu
+// Сode for the navigation menu
 function setupNavMenu() {
 	const navToggle = document.querySelector('.header_nav_toggle');
 	const navMenu = document.querySelector('.header_nav');
@@ -48,8 +48,6 @@ function setupNavMenu() {
 // Execute the functions when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
 	setupNavMenu();
-
-	// Add any other initialization code here if needed
 });
 
 // Execute the scrollToTop function when the 'port' button is clicked
@@ -58,3 +56,22 @@ btnPort.addEventListener('click', function (e) {
 	e.preventDefault();
 	scrollToTop();
 });
+
+// Language switching functionality
+function switchLanguage(lang) {
+	const body = document.body;
+	const uaTextElements = document.querySelectorAll('.ua-text');
+	const enTextElements = document.querySelectorAll('.en-text');
+
+	if (lang === 'en') {
+		body.classList.remove('lang-ua');
+		body.classList.add('lang-en');
+		uaTextElements.forEach(el => el.style.display = 'none');
+		enTextElements.forEach(el => el.style.display = 'block');
+	} else {
+		body.classList.remove('lang-en');
+		body.classList.add('lang-ua');
+		uaTextElements.forEach(el => el.style.display = 'block');
+		enTextElements.forEach(el => el.style.display = 'none');
+	}
+}

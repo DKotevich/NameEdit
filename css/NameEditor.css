@@ -15,23 +15,21 @@ body {
     font-style: "regular";
     line-height: 1.2;
 
-    padding: 0;
-    margin-top: 80px;
-}
-
-p {
-    font-size: 20px;
-    font-weight: 200;
-}
-
-/*Shirina headera*/
-.content {
     max-width: 1024px;
     margin: 0 auto;
-    padding-top: 25px;
+    padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
 
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.ua-text {
+    display: none;
 }
 
 /*poloska headera*/
@@ -57,24 +55,31 @@ p {
 }
 
 .header_logo {
-    padding-top: 4px;
+    margin-top: 7px;
     font-size: 20px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     text-indent: 8px;
     color: white;
 }
 
 /*NAVIGACIYA SAITA v headere*/
-.header_list {
-    font-weight: 500;
+.rightHeaderGroup {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header_nav{
+    margin-right: 5px;
+}
+
+.buttonBlock {
+    width: 150px;
 }
 
 .header_list li {
     text-indent: 15px;
     display: inline-block;
-    color: white;
 }
 
 .header_list li a {
@@ -83,28 +88,6 @@ p {
 }
 
 /*Knopka MENU*/
-.header_nav_toggle {
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 20px;
-    margin: 0 15px 15px 0;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    height: 32px;
-    line-height: 32px;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    background-color: #008874;
-    color: white;
-    box-shadow: 0 2px #005548;
-    cursor: pointer;
-    user-select: none;
-    appearance: none;
-    touch-action: manipulation;
-    vertical-align: top;
-}
 
 .header_nav_toggle:hover {
     background-color: #279484;
@@ -123,21 +106,20 @@ p {
     pointer-events: none;
 }
 
-
-.page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.flex {
+main {
     flex-grow: 1;
 }
 
-.titleTop {
+h1,
+h2 {
+    margin-top: 20px;
     color: #007765;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
+}
+
+p {
+    font-size: 18px;
 }
 
 
@@ -164,10 +146,7 @@ input {
 }
 
 button {
-    display: inline-block;
-    box-sizing: border-box;
     padding: 0 20px;
-    margin: 0 15px 15px 0;
     outline: none;
     border: none;
     border-radius: 4px;
@@ -224,33 +203,33 @@ footer div {
     justify-content: center;
 }
 
-/* При размере больше 768 */
+/* При размере больше 1024 */
 @media screen and (min-width: 1024px) {
     .header_nav_toggle {
         visibility: hidden;
     }
 }
 
-/* При размере меньше 768 */
-@media screen and (max-width: 1024px) {
+/* При размере меньше 1024 */
+@media screen and (max-width: 1023px) {
 
-    .content {
-        max-width: 1024px;
-        margin: 0 auto;
-        padding-top: 25px;
-        padding-left: 30px;
-        padding-right: 30px;
+    body {
+        padding-left: 25px;
+        padding-right: 25px;
 
     }
 
     .vertikalHeader {
-        margin: 0 auto;
-        max-width: 1024px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 20px;
-        padding-right: 30px;
+        padding-left: 15px;
+        padding-right: 25px;
+    }
+
+    .header_logo .header_site_name {
+        display: none;
+    }
+
+    .rightHeaderGroup {
+        width: 243px;
     }
 
     .header_nav {
@@ -262,6 +241,7 @@ footer div {
         background-color: #007765;
         width: 100%;
         text-align: center;
+        font-size: 18px;
     }
 
     .header_nav.active {
@@ -287,10 +267,6 @@ footer div {
 
     .header_nav_toggle {
         display: block;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        font-size: 20px;
         color: white;
         cursor: pointer;
     }
@@ -299,45 +275,5 @@ footer div {
     input {
         height: 40px;
         font-size: 30px;
-    }
-
-    button {
-        display: inline-block;
-        box-sizing: border-box;
-        padding: 0 20px;
-        margin: 0 15px 15px 0;
-        outline: none;
-        border: none;
-        border-radius: 4px;
-        height: 40px;
-        line-height: 32px;
-        font-size: 19px;
-        font-weight: 550;
-        text-decoration: none;
-        background-color: #008874;
-        color: white;
-        box-shadow: 0 2px #005548;
-        cursor: pointer;
-        user-select: none;
-        appearance: none;
-        touch-action: manipulation;
-        vertical-align: top;
-    }
-
-    button:hover {
-        background-color: #279484;
-    }
-
-    button:active {
-        background-color: #00705f !important;
-    }
-
-    button:focus-visible {
-        box-shadow: 0 0 0 3px #00a189;
-    }
-
-    button:disabled {
-        background-color: #3f887d;
-        pointer-events: none;
     }
 }
