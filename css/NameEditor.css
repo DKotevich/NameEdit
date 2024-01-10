@@ -14,18 +14,14 @@ body {
     font-family: 'Rubik', 'sans-serif';
     font-style: "regular";
     line-height: 1.2;
-
     max-width: 1024px;
     margin: 0 auto;
     padding-top: 80px;
     padding-left: 10px;
     padding-right: 10px;
-
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
 }
 
 .ua-text {
@@ -66,10 +62,12 @@ body {
 /*NAVIGACIYA SAITA v headere*/
 .rightHeaderGroup {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
-.header_nav{
+
+.header_nav {
     margin-right: 5px;
 }
 
@@ -124,14 +122,30 @@ p {
 
 
 .mainform {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #007765;
-    margin-top: 20px;
-    padding: 38px 28px 28px 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px 20px 20px 20px;
     border-radius: 10px;
     width: 100%;
     transition: transform 300ms, box-shadow 300ms;
     box-shadow: 1px 7px 5px rgba(15, 83, 101, 0.57);
     font-size: 20px;
+}
+
+.TheMainButton {
+    padding-top: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.CharsCount {
+    color: white;
 }
 
 label {
@@ -185,19 +199,20 @@ button:disabled {
 
 footer {
     flex-shrink: 0;
-    margin-top: 20px;
     padding: 25px;
     border-radius: 10px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     background-color: #4f4e4e;
-    height: 176px;
+    height: fit-content;
     color: white;
 }
 
 footer div {
-    margin: 20px;
+    margin: 10px;
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -216,7 +231,6 @@ footer div {
     body {
         padding-left: 25px;
         padding-right: 25px;
-
     }
 
     .vertikalHeader {
@@ -276,4 +290,5 @@ footer div {
         height: 40px;
         font-size: 30px;
     }
+
 }

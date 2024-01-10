@@ -1,17 +1,42 @@
-// Сode for copying text
+// Code for copying text
 function copyText(event) {
 	// Prevent the default form submission behavior
 	event.preventDefault();
+	var inputField = document.getElementById('inputField');
+	var outputField = document.getElementById('outputField');
 
-	// Get the value from the first field
-	var inputText = document.getElementById('inputField').value;
+	var inputText = inputField.value;
 
-	// Remove tabs and forbidden characters
-	var correctedText = inputText.replace(/\t/g, '').replace(/[\\/:\*\?"<>\|]/g, '');
+	// Regular expression for allowed characters in Windows filenames and folders
+	var allowedCharsRegex = /[a-zA-Z0-9_\-().,;!@#$%^&\u4e00-\u9fa5\u0900-\u097F\u0600-\u06FF\u00C0-\u00FF\u0400-\u04FF\u200C\u200D。、，；！@＃＄％＾＆　\s]+/g;
 
-	// Set the corrected value in the second field
-	document.getElementById('outputField').value = correctedText;
+	// Check for null before calling join('')
+	var cleanedTextArray = inputText.match(allowedCharsRegex);
+	var cleanedText = cleanedTextArray ? cleanedTextArray.join('') : '';
+
+	outputField.value = cleanedText;
+
+	// Count the number of removed characters
+	var removedCharsCount = inputText.length - cleanedText.length;
+	document.getElementById('removedCharsCount').textContent = removedCharsCount;
 }
+
+function copyToClipboard() {
+	var outputField = document.getElementById('outputField');
+	outputField.select();
+
+	// Use navigator.clipboard.writeText for modern browsers
+	navigator.clipboard.writeText(outputField.value)
+		.then(() => {
+			alert('Copied! Скопійовано!');
+		})
+		.catch((error) => {
+			console.error('Error copying to clipboard:', error);
+		});
+}
+
+
+
 
 // Scroll to the top of the page
 function scrollToTop() {
@@ -56,22 +81,3 @@ btnPort.addEventListener('click', function (e) {
 	e.preventDefault();
 	scrollToTop();
 });
-
-// Language switching functionality
-function switchLanguage(lang) {
-	const body = document.body;
-	const uaTextElements = document.querySelectorAll('.ua-text');
-	const enTextElements = document.querySelectorAll('.en-text');
-
-	if (lang === 'en') {
-		body.classList.remove('lang-ua');
-		body.classList.add('lang-en');
-		uaTextElements.forEach(el => el.style.display = 'none');
-		enTextElements.forEach(el => el.style.display = 'block');
-	} else {
-		body.classList.remove('lang-en');
-		body.classList.add('lang-ua');
-		uaTextElements.forEach(el => el.style.display = 'block');
-		enTextElements.forEach(el => el.style.display = 'none');
-	}
-}

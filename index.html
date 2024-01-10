@@ -4,8 +4,12 @@
 <head>
     <meta name="google-site-verification" content="gCtVzK68YH6t2rNElAjzmKMnb1juZdOUqOAf0E3CL2w" />
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="Remove extra characters from a title or any text with NameEditor. Quick and safe text correction.">
+    <meta name="keywords" content="NameEditor, remove characters, text correction">
+
 
     <title>NameEditor</title>
     <link rel="stylesheet" href="css/resset.css">
@@ -25,107 +29,62 @@
     <header class="header">
         <div class="vertikalHeader">
             <div class="header_logo">
-                <a href="#" id="port"><img src="img/Logo.png" alt="NamEditor" height="70" width="94"></a>
-                <div class="en-text">
-                    <div class="header_site_name">Name editor</div>
-                </div>
-                <div class="ua-text">
-                    <div class="header_site_name">Нейм едітор</div>
-                </div>
+                <a href="#" id="port"><img src="img/Logo.png" alt="NamеEditor" height="70" width="94"></a>
+                <div class="header_site_name">Name editor</div>
             </div>
             <div class="rightHeaderGroup">
-                <button class="header_nav_toggle">Menu</button>
+                <button alt="Menu" class="header_nav_toggle">Menu</button>
                 <nav class="header_nav">
                     <ul class="header_list">
                         <li><a href="#2">
-                                <div class="en-text">Correct the file name</div>
-                                <div class="ua-text">Виправити назву файлу</div>
+                                Correct the text
                             </a></li>
                         <li><a href="#3">
-                                <div class="en-text">Privacy Policy</div>
-                                <div class="ua-text">Політика конфіденційності</div>
+                                Privacy Policy
                             </a></li>
                     </ul>
                 </nav>
-                <div class="buttonBlock">
-                    <button onclick="switchLanguage('en')">EN</button>
-                    <button onclick="switchLanguage('ru')">Укр</button>
+                <div class="langBlock">
+                    <a href="index.html"><button>EN</button></a>
+                    <a href="ua/ua.html"><button>Укр</button></a>
                 </div>
             </div>
         </div>
     </header>
-
-
     <main>
-        <div class="en-text">
-            <h1> How to remove title characters:</h1>
-        </div>
-        <div class="ua-text">
-            <h1> Як видалити зайві символи з назви:</h1>
-        </div>
+        <h1>How to remove extra characters from a title or any text:</h1>
         <p><a id="2"></a>
-        <div class="en-text">
-            <p>Often, when creating a new file or renaming an existing one, the operating
-                the system complains about the wrong document name. Name editor allows fast and safe
-                remove from
-                the name of your document has extra characters.</p>
-        </div>
-        <div class="ua-text">
-            <p>Часто, при створенні нового файла або переіменовуванні існуючого, операційна
-                система скаржиться на неправильне імʼя документа. Нейм едітор дозволяє швидко та безпечно
-                прибрати з
-                назви Вашого документа зайві символи.</p>
-        </div>
+        <p>Often, when creating a new file or renaming an existing one, the operating system complains about the wrong
+            name of the document. The name editor allows you to quickly and safely remove additional characters from the
+            name of your document or any text.</p>
         </p>
-        <div class="en-text">
-            <h2>Correct the file name:</h2>
-        </div>
-        <div class="ua-text">
-            <h2>Виправити назву файлу:</h2>
-        </div>
-
+        <h2>Correct the text:</h2>
         <form class="mainform">
-            <div class="en-text">
-                <label for="inputField">Enter text:</label>
-            </div>
-            <div class="ua-text">
-                <label for="inputField">Введть текст:</label>
-            </div>
+            <label for="inputField">Original text:</label>
             <input type="text" id="inputField">
-
-            <button onclick="copyText(event)">></button>
-            <p>
-            <div class="en-text">
+            <button onclick="copyText(event)">Correct text</button>
+            <div class="TheMainButton">
                 <label for="outputField">Text output:</label>
+                <div class="CharsCount">
+                    <div>Removed chars count:</div>
+                    <div id="removedCharsCount">0</div>
+                </div>
             </div>
-            <div class="ua-text">
-                <label for="outputField">Вивід тексту:</label>
-            </div>
-            <input type="text" id="outputField">
             </p>
+            <input type="text" id="outputField">
+            <button onclick="copyToClipboard()">Copy to clipboard</button>
         </form>
     </main>
     <footer>
         <div class="privacy_policy">
             <a id="3"></a>
-            <div class="en-text">
-                All your data is not saved.
-                At once
-                after
-                processing data is erased.
-            </div>
-            <div class="ua-text">
-                Всі Ваші данні не зберігаються.
-                Одразу
-                після
-                обробки данні стираються.
-            </div>
+            All your data is not saved.
+            At once
+            after
+            processing data is erased.
         </div>
-        <div class="en-text">
+        <div class="feedback">
             Questions and suggestions: kotevichdim@gmail.com
-        </div>
-        <div class="ua-text">
-            Питання та пропозиції: kotevichdim@gmail.com
         </div>
     </footer>
 </body>
